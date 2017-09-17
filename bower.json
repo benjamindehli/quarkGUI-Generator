@@ -1,0 +1,19 @@
+{
+  "name": "quark-gui-generator",
+  "description": "",
+  "main": "Gulpfile.js",
+  "authors": [
+    "Benjamin Dehli <superelg@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/benjamindehli/quarkGUI-Generator",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {}
+}
