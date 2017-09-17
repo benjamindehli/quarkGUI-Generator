@@ -1,0 +1,10 @@
+import * as quark from "quark-gui";
+let Button = quark.Atoms.Buttons.Button;
+
+
+
+let template = `
+
+`;
+
+export default template;

@@ -1,0 +1,12 @@
+import * as quark from "quark-gui";
+
+
+let template = `
+<div>
+<buttons></buttons>
+</div>
+`;
+
+export default template;
+
+
