@@ -1,9 +1,8 @@
 .generator {
     .config, .result{
-        border: 1px solid #ccc;
         width: 50%;
         float: left;
-        padding: 20px;
+        padding: 6px;
     }
     .config {
         input{
@@ -29,9 +28,13 @@
         .markup{
             font-family: monospace;
             font-size: 12px;
+            line-height: 16px;
             background: #eee;
             span{
                 display: block;
+            }
+            pre{
+                margin: 0;
             }
         }
     }

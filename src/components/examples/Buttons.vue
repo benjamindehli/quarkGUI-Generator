@@ -28,7 +28,9 @@
 				<div class="markup">
 					<span>import * as quark from 'quark-gui';</span>
 					<span>let Button = quark.Atoms.Buttons.Button;</span>
+					<span>Button.getModule(</span>
 					<pre v-html="elementProperties"></pre>
+					<span>);</span>
 				</div>
 			</div>
 		</div>
