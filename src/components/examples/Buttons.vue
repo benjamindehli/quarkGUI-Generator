@@ -27,10 +27,10 @@
 				<div class="result col-sm-8">
 					<h3>Result</h3>
 					<div class="tabs">
-						<span class='tab tab-visual' v-bind:class="{active: resultOptions.show == 'visual'}" v-on:click="resultOptions.show = 'visual'">Visual</span>
+						<span class='tab tab-preview' v-bind:class="{active: resultOptions.show == 'preview'}" v-on:click="resultOptions.show = 'preview'">Preview</span>
 						<span class='tab tab-markup' v-bind:class="{active: resultOptions.show == 'markup'}" v-on:click="resultOptions.show = 'markup'">Markup</span>
 					</div>
-					<div v-show="resultOptions.show == 'visual'" class="visual">
+					<div v-show="resultOptions.show == 'preview'" class="preview">
 						<div v-html="buttonElement"></div>
 					</div>
 					<div v-show="resultOptions.show == 'markup'" class="markup">
@@ -71,7 +71,7 @@ export default {
 				type: ['flat', 'raised', 'minimal']
 			},
 			resultOptions:{
-				show: 'visual'
+				show: 'preview'
 			}
 
 		}
