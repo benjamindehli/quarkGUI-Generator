@@ -1,12 +1,14 @@
 .generator {
     .config, .result{
-        width: 50%;
-        float: left;
-        padding: 6px;
     }
     .config {
         input{
             display: block;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #AAA;
+            padding: 4px 8px;
             &.inline{
                 display: inline-block;
             }
@@ -25,11 +27,41 @@
 
     }
     .result{
+        .tabs{
+            .tab{
+
+                cursor: pointer;
+                border: 1px solid #AAA;
+                border-radius: 3px 3px 0 0;
+                padding: 4px 12px;
+                display: inline-block;
+                background-color: #f4f5f6;
+                margin-bottom: -1px; 
+                position: relative;
+                border-bottom: none;
+                &.active{
+                    z-index: 1;
+                    background-color: #fff;
+                }
+                &:hover{
+                    background-color: #fff;
+                }
+            }
+        }
+        .visual, 
+        .markup{
+            position: relative;
+            border: 1px solid #AAA;
+            background-color: #FFF;
+            padding: 16px;
+            border-radius: 0 3px 3px 3px;
+        }
+        .visual{
+        }
         .markup{
             font-family: monospace;
-            font-size: 12px;
+            font-size: 14px;
             line-height: 16px;
-            background: #eee;
             span{
                 display: block;
             }
