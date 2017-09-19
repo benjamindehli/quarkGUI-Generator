@@ -10,8 +10,8 @@
 		</div>
 		<div v-show="$parent.resultOptions.show == 'markup'" class="markup">
 			<span>import * as quark from 'quark-gui';</span>
-			<span>let SelectList = quark.Molecules.FormElements.SelectList;</span>
-			<span>SelectList.getModule(</span>
+			<span>let {{$parent.moduleName}} = quark.{{$parent.moduleNameSpace}}.{{$parent.moduleName}};</span>
+			<span>{{$parent.moduleName}}.getModule(</span>
 			<pre v-html="$parent.elementProperties"></pre>
 			<span>);</span>
 		</div>
