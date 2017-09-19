@@ -1,15 +1,23 @@
 <script>
-	/* Template */
-	import ExamplesTemplate from "./ExamplesTemplate.quark";
+/* Template */
+import ExamplesTemplate from "./ExamplesTemplate.quark";
 
-	/* Components*/
-	import Buttons from './examples/Buttons.vue';
+/* Components*/
+import AtomButton from './examples/AtomButton.vue';
+import MoleculeSelectList from './examples/MoleculeSelectList.vue';
 
-	export default {
-		name: 'Examples',
-		template: ExamplesTemplate,
-		components: {
-			Buttons: Buttons
+export default {
+	name: 'Examples',
+	template: ExamplesTemplate,
+	data: function() {
+		return {
+			modules: require("../json/modules.json"),
+			selectedModule: {}
 		}
+	},
+	components: {
+		AtomButton: AtomButton,
+		MoleculeSelectList: MoleculeSelectList
 	}
+}
 </script>

@@ -24,6 +24,38 @@
             -moz-appearance: radio;
             appearance: radio;
         }
+        .form-list{
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            .form-list-item{
+                padding: 16px;
+                border-bottom: 1px solid #aaa;
+                &:last-child{
+                    border-bottom: none;
+                }
+                .form-list-item-remove:before{
+                    font-family: FontAwesome;
+                    display: inline-block;
+                    content: "\F00D";
+                    float: right;
+                    position: relative;
+                    top: -12px;
+                    right: -9px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .button{
+            background-color: #f4f5f6;
+            border-radius: 3px;
+            border: 1px solid #AAA;
+            padding: 4px 12px;
+            display: inline-block;
+            cursor: pointer;
+            &:hover{
+                background-color: #FFF;
+            }
+        }
 
     }
     .result{

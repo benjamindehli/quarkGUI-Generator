@@ -3,7 +3,14 @@ import * as quark from "quark-gui";
 
 let template = `
 <div>
-<buttons></buttons>
+	<label>Select module
+		<select v-model="selectedModule">
+			<option v-for="module in modules" v-bind:value="module">{{module.moduleTitle}}</option>
+		</select>
+	</label>
+	
+	<atom-button></atom-button>
+	<molecule-select-list></molecule-select-list>
 </div>
 `;
 

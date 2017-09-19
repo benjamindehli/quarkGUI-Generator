@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-show="isSelected">
 		<div class="generator">
 			<h2>Button</h2>
 			<div class="row">
@@ -11,10 +11,13 @@
 					<div><label>Content<input v-model="elementProperties.content" /></label></div>
 					<div><label>Submit<input type="checkbox" v-model="elementProperties.submit" /></label></div>
 
-					<div><label>Type<select v-model="elementProperties.type">
-						<option v-for="type in config.type" v-bind:value="type">{{ type }}</option>
-					</select></label></div>
-
+					<div>
+						<label>Type
+							<select v-model="elementProperties.type">
+								<option v-for="type in config.type" v-bind:value="type">{{ type }}</option>
+							</select>
+						</label>
+					</div>
 					<div>
 						<label>Theme
 							<select v-model="elementProperties.theme">
@@ -25,21 +28,7 @@
 				</div>
 
 				<div class="result col-sm-8">
-					<h3>Result</h3>
-					<div class="tabs">
-						<span class='tab tab-preview' v-bind:class="{active: resultOptions.show == 'preview'}" v-on:click="resultOptions.show = 'preview'">Preview</span>
-						<span class='tab tab-markup' v-bind:class="{active: resultOptions.show == 'markup'}" v-on:click="resultOptions.show = 'markup'">Markup</span>
-					</div>
-					<div v-show="resultOptions.show == 'preview'" class="preview">
-						<div v-html="buttonElement"></div>
-					</div>
-					<div v-show="resultOptions.show == 'markup'" class="markup">
-						<span>import * as quark from 'quark-gui';</span>
-						<span>let Button = quark.Atoms.Buttons.Button;</span>
-						<span>Button.getModule(</span>
-						<pre v-html="elementProperties"></pre>
-						<span>);</span>
-					</div>
+					<results></results>
 				</div>
 			</div>
 		</div>
@@ -49,13 +38,19 @@
 
 <script>
 import * as quark from "quark-gui";
+import Results from './partials/Results.vue';
 
 let Button = quark.Atoms.Buttons.Button;
 
 export default {
-	name: 'Buttons',
+	name: 'AtomButton',
+	components: {
+		Results: Results
+	},
 	data: function () {
 		return {
+			moduleName: 'Button',
+			moduleNameSpace: 'Atoms.Buttons',
 			elementProperties: {
 				id: '',
 				link: '',
@@ -73,15 +68,15 @@ export default {
 			resultOptions:{
 				show: 'preview'
 			}
-
 		}
 	},
 	computed: {
-		buttonElement: function (){
-			return Button.getModule(this.elementProperties)
+		isSelected: function (){
+			let selected = this.$parent.selectedModule;
+			return selected.moduleName == this.moduleName && selected.moduleNameSpace == this.moduleNameSpace;
 		},
-		buttonElementMarkup: function (){
-			return this.elementProperties;
+		previewElement: function (){
+			return Button.getModule(this.elementProperties)
 		}
 	}
 }
