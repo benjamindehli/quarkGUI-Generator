@@ -6,7 +6,7 @@
     "Benjamin Dehli <superelg@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/benjamindehli/quarkGUI-Generator",
+  "homepage": "https://github.com/quarkGUI/quarkGUI-Generator",
   "private": true,
   "ignore": [
     "**/.*",

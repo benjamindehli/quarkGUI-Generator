@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benjamindehli/quarkGUI-Generator.git"
+    "url": "git+https://github.com/quarkGUI/quarkGUI-Generator.git"
   },
   "author": "Benjamin Dehli <superelg@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/benjamindehli/quarkGUI-Generator/issues"
+    "url": "https://github.com/quarkGUI/quarkGUI-Generator/issues"
   },
-  "homepage": "https://github.com/benjamindehli/quarkGUI-Generator#readme",
+  "homepage": "https://github.com/quarkGUI/quarkGUI-Generator#readme",
   "dependencies": {
     "vue": "^2.2.1"
   },
